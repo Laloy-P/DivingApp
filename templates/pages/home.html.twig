@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+        <h1>Willkommen !</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque autem corporis delectus
+            doloribus ex impedit mollitia nihil nobis non officiis omnis, optio, quibusdam quidem quod rerum sed,
+            vel?</p>
+
+    </div>
+    <div class="container">
+        <h2> Les dernières Plongées</h2>
+        <div class="row-flex">
+            {% for dive in dives %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ path('dive.show', {id: dive.id, slug: dive.slug}) }}">{{ dive.title }} Le {{ dive.date | date("m/d/Y") }}</a>
+                            </h5>
+                            <p class="card-text">
+                                Lieu : {{ dive.location }} <br> Site : {{ dive.diveSite }} <br> Commentaires : {{ dive.comments }}
+                            </p>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+{% endblock%}

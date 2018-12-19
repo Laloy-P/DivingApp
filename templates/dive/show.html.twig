@@ -1,0 +1,73 @@
+{%  extends 'base.html.twig'%}
+{% block title dive.title%}
+{% block body %}
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+
+                </div>
+                <div class="col-md-4">
+                    <h1>{{ dive.title }}</h1>
+                    <h2>{{ dive.formatedDate }}</h2>
+
+                    <a href="#" class="btn btn-primary">Contacter l'organisme</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4 ">
+
+        <p>
+            {{ dive.comments | nl2br }}
+        </p>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Caractéristiques</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <td>Type de plongée</td>
+                        <td>{{ dive.diveTypeFormated }}</td>
+                    </tr>
+                    <tr>
+                        <td>Lieu</td>
+                        <td>{{ dive.location }} </td>
+                    </tr>
+                    <tr>
+                        <td>Site</td>
+                        <td>{{ dive.diveSite }} </td>
+                    </tr>
+                    <tr>
+                        <td>Durée</td>
+                        <td>{{ dive.diveTime }} minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Profondeur max</td>
+                        <td>{{ dive.maxDepth }} mètres</td>
+                    </tr>
+                    <tr>
+                        <td>Palier(s)</td>
+                        <td>{%  if dive.stops %} oui {% else %} non {% endif %} </td>
+                    </tr>
+                    <tr>
+                        <td>Temps au palier</td>
+                        <td>{%  if dive.stops %} {{ dive.stopsTime }} min {% endif %} </td>
+                    </tr>
+                    <tr>
+                        <td>Profondeur palier</td>
+                        <td>{%  if dive.stops %} {{ dive.stopDepth }} mètres {% endif %} </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <h2>Spécificités</h2>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+

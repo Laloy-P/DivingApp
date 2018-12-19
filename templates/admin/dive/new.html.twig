@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title 'admin plongées' %}
+    {% block body %}
+
+        <div class="container mt-4">
+            <h1>Ajouter une plongée</h1>
+            {{  include ( 'admin/dive/_form.html.twig', {form: form, button:'Enregistrer'} )}}
+        </div>
+
+    {% endblock%}

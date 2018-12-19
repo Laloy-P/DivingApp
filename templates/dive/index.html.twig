@@ -1,0 +1,34 @@
+{%  extends 'base.html.twig'%}
+
+{% block body %}
+    <div class="container mt-4 text-center">
+        <h1>Plongées</h1>
+
+    </div>
+    <div class="container mt-4">
+        <h2>Mes Plongées</h2>
+
+        <table class="table table-stripped">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for dive in dives %}
+                <tr>
+                    <td>{{ dive.title }}</td>
+                    <td>
+                        <a href="{{ path('dive.show', {id: dive.id, slug: dive.slug}) }}" class="btn btn-secondary"> Voir</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+
+
+    </div>
+{% endblock%}

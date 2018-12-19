@@ -1,0 +1,23 @@
+{{ form_start(form) }}
+
+    <div class="row">
+        <div class="col-md-4">{{ form_row(form.title)}}</div>
+        <div class="col-md-4">{{ form_row(form.location)}}</div>
+        <div class="col-md-4">{{ form_row(form.dive_site)}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">{{ form_row(form.max_depth)}}</div>
+        <div class="col-md-4">{{ form_row(form.dive_time)}}</div>
+        <div class="col-md-4">{{ form_row(form.pre_dive_interval)}}</div>
+        <div class="col-md-4">{{ form_row(form.dive_type)}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">{{ form_row(form.stops)}}</div>
+        <div class="col-md-3">{{ form_row(form.stops_time)}}</div>
+        <div class="col-md-3">{{ form_row(form.stop_depth)}}</div>
+    </div>
+
+    {{form_rest(form)}}
+    <button class="btn btn-primary">{{ button | default('Enregistrer') }}</button>
+
+{{ form_end(form) }}
